@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".src.login.Join.JoinActivity">
+
+    <ImageButton
+        android:id="@+id/ib_join_cancel"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/canceel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="@string/join_text"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ib_join_cancel"
+        app:layout_constraintStart_toEndOf="@+id/ib_join_cancel"
+        app:layout_constraintTop_toTopOf="@+id/ib_join_cancel" />
+
+    <View
+        android:id="@+id/divider_main_top"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginTop="20dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ib_join_cancel" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="53dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_main_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_join_logo"
+                    android:layout_width="170dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_user_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/join_user"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_join_logo" />
+
+                <!-- 이메일 입력 -->
+                <EditText
+                    android:id="@+id/et_join_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/join_input_box"
+                    android:hint="@string/join_email"
+                    android:paddingStart="60dp"
+                    android:textCursorDrawable="@drawable/edit_text_cursor_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/tv_user_text"
+                    app:textInputLayoutFocusedRectEnabled="true" />
+
+                <ImageView
+                    android:id="@+id/iv_join_email"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/email_join"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_join_email"
+                    app:layout_constraintStart_toStartOf="@+id/et_join_email"
+                    app:layout_constraintTop_toTopOf="@+id/et_join_email" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="48dp"
+                    android:background="@color/input_ccc"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_join_email"
+                    app:layout_constraintStart_toEndOf="@+id/iv_join_email"
+                    app:layout_constraintTop_toTopOf="@+id/et_join_email" />
+
+                <!-- 비밀번호 입력 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_join_pw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="18dp"
+                    app:hintEnabled="false"
+                    app:layout_constraintTop_toBottomOf="@id/et_join_email"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/et_join_passwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/join_input_box"
+                        android:hint="@string/join_password"
+                        android:paddingStart="60dp"
+                        android:textCursorDrawable="@drawable/edit_text_cursor_color"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:textInputLayoutFocusedRectEnabled="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/iv_join_passwd"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/password_join"
+                    app:layout_constraintBottom_toBottomOf="@+id/layout_join_pw"
+                    app:layout_constraintStart_toStartOf="@+id/layout_join_pw"
+                    app:layout_constraintTop_toTopOf="@+id/layout_join_pw"
+                    app:layout_constraintVertical_bias="0.6" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="48dp"
+                    android:background="@color/input_ccc"
+                    app:layout_constraintBottom_toBottomOf="@+id/layout_join_pw"
+                    app:layout_constraintStart_toEndOf="@+id/iv_join_passwd"
+                    app:layout_constraintTop_toTopOf="@+id/layout_join_pw"
+                    app:layout_constraintVertical_bias="1" />
+
+                <!-- 이름 입력 -->
+                <EditText
+                    android:id="@+id/et_join_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/join_input_box"
+                    android:hint="@string/join_name"
+                    android:paddingStart="60dp"
+                    android:textCursorDrawable="@drawable/edit_text_cursor_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/layout_join_pw"
+                    app:textInputLayoutFocusedRectEnabled="true" />
+
+                <ImageView
+                    android:id="@+id/iv_join_name"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/name_join"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_join_name"
+                    app:layout_constraintStart_toStartOf="@+id/et_join_name"
+                    app:layout_constraintTop_toTopOf="@+id/et_join_name" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/input_ccc"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_join_name"
+                    app:layout_constraintStart_toEndOf="@+id/iv_join_name"
+                    app:layout_constraintTop_toTopOf="@+id/iv_join_name" />
+
+                <!-- 휴대폰 번호 입력 -->
+                <EditText
+                    android:id="@+id/et_join_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/join_input_box"
+                    android:hint="@string/join_phone"
+                    android:paddingStart="60dp"
+                    android:textCursorDrawable="@drawable/edit_text_cursor_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/et_join_name"
+                    app:textInputLayoutFocusedRectEnabled="true" />
+
+                <ImageView
+                    android:id="@+id/iv_join_phone"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/phone_join"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_join_phone"
+                    app:layout_constraintStart_toStartOf="@+id/et_join_phone"
+                    app:layout_constraintTop_toTopOf="@+id/et_join_phone" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/input_ccc"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_join_phone"
+                    app:layout_constraintStart_toEndOf="@+id/iv_join_phone"
+                    app:layout_constraintTop_toTopOf="@+id/iv_join_phone" />
+
+                <View
+                    android:id="@+id/divider_join_low"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@color/divider_f2f2f2"
+                    app:layout_constraintTop_toBottomOf="@+id/et_join_phone" />
+
+                <TextView
+                    android:id="@+id/tv_service_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/join_service"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider_join_low" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_agree_all"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@android:color/transparent"
+                    android:button="@drawable/custom_checkbox"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_service_text" />
+
+                <TextView
+                    android:id="@+id/tv_agree_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/join_all_agree"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/checkbox_agree_all"
+                    app:layout_constraintStart_toEndOf="@+id/checkbox_agree_all"
+                    app:layout_constraintTop_toTopOf="@+id/checkbox_agree_all" />
+
+                <TextView
+                    android:id="@+id/tv_agree_all_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:ems="16"
+                    android:lineSpacingExtra="6dp"
+                    android:text="@string/join_all_agree_text"
+                    android:textColor="@color/text_474E58"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/divider_join_low"
+                    app:layout_constraintStart_toStartOf="@+id/tv_agree_all"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_agree_all" />
+
+                <!--경고 메세지 -->
+                <ImageView
+                    android:id="@+id/iv_warning"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/warning"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/checkbox_agree_all"
+                    app:layout_constraintTop_toBottomOf="@id/tv_agree_all_text" />
+
+                <!--경고 메세지 -->
+                <TextView
+                    android:id="@+id/tv_not_agree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/join_not_agree"
+                    android:textColor="@color/warning_red"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_warning"
+                    app:layout_constraintStart_toEndOf="@+id/iv_warning"
+                    app:layout_constraintTop_toTopOf="@+id/iv_warning" />
+
+                <LinearLayout
+                    android:id="@+id/layout_check"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/join_input_box"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_not_agree">
+
+                    <!-- 약관1 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_e1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_checkbox" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/join_agree1"
+                            android:textColor="@color/text_474E58" />
+
+                    </LinearLayout>
+
+                    <!-- 약관2 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="12dp"
+                        android:gravity="top"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_e2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_checkbox" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/join_agree2"
+                            android:textColor="@color/text_474E58" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="8dp"
+                            android:layout_height="16dp"
+                            android:layout_marginRight="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/arrow_agree" />
+
+                    </LinearLayout>
+
+                    <!-- 약관3 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_e3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_checkbox" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/join_agree3"
+                            android:textColor="@color/text_474E58" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="8dp"
+                            android:layout_height="16dp"
+                            android:layout_marginRight="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/arrow_agree" />
+
+                    </LinearLayout>
+
+                    <!-- 약관4 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_e4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_checkbox" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/join_agree4"
+                            android:textColor="@color/text_474E58"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="8dp"
+                            android:layout_height="16dp"
+                            android:layout_marginRight="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/arrow_agree" />
+
+                    </LinearLayout>
+
+                    <!-- 약관5 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_e5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_checkbox" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/join_agree5"
+                            android:textColor="@color/text_474E58"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="8dp"
+                            android:layout_height="16dp"
+                            android:layout_marginRight="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/arrow_agree" />
+
+                    </LinearLayout>
+
+                    <!-- 약관6 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="12dp"
+                        android:gravity="top"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_c1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_checkbox" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:ems="17"
+                            android:text="@string/join_agree6"
+                            android:textColor="@color/text_474E58"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="8dp"
+                            android:layout_height="16dp"
+                            android:layout_marginRight="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/arrow_agree" />
+
+                    </LinearLayout>
+
+                    <!-- 약관7 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_c2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_checkbox" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/join_agree7"
+                            android:textColor="@color/text_474E58"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="8dp"
+                            android:layout_height="16dp"
+                            android:layout_marginRight="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/arrow_agree" />
+
+                    </LinearLayout>
+
+                    <!-- 약관8 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="38dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_cc1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_checkbox" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/join_agree8"
+                            android:textColor="@color/text_474E58"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <!-- 약관9 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="38dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_cc2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_checkbox" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/join_agree9"
+                            android:textColor="@color/text_474E58"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <!-- 약관10 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="38dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_cc3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_checkbox" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@string/join_agree10"
+                            android:textColor="@color/text_474E58"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/btn_join_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/agree"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_check" />
+
+                <TextView
+                    android:id="@+id/btn_join_login_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/join_btn"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_join_login"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_join_login"
+                    app:layout_constraintStart_toStartOf="@+id/btn_join_login"
+                    app:layout_constraintTop_toTopOf="@+id/btn_join_login" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="36dp"
+                    android:text="@string/join_copyright"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_join_login" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

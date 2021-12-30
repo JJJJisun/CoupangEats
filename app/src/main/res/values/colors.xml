@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#00AFFE</color>
+    <color name="teal_700">#00AFFE</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_transparent">#03FFFFFF</color>
+    <color name="red_w">#E83925</color>
+
+    <!-- Main Color -->
+    <color name="main_color">#00AFFE</color>
+    <color name="main_bold_divider">#F5F6F8</color>
+
+    <!-- Email Login -->
+    <color name="input_AFB7C2">#AFB7C2</color>
+    <color name="divider_ddd">#DDD</color>
+    <color name="text_474E58">#474E58</color>
+
+    <!-- Join Login -->
+    <color name="input_ccc">#ccc</color>
+    <color name="divider_f2f2f2">#F2F2F2</color>
+    <color name="blue_346AFF">#346AFF</color>
+    <color name="warning_red">#CA1400</color>
+
+    <!-- Bottom Sheet -->
+    <color name="bottom_main_b">#212B35</color>
+    <color name="bottom_text_w">#919FAC</color>
+
+</resources>

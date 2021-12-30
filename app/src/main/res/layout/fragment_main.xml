@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainFragment">
+
+    <LinearLayout
+        android:id="@+id/layout_main_f_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/ib_main_f_cancel"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/main_location" />
+
+        <TextView
+            android:id="@+id/tv_main_f_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="동양빌라"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/main_location_blue" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_main_f_search"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/item_search"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_main_f_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/layout_main_f_location" />
+
+    <View
+        android:id="@+id/divider_main_top"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_main_f_location" />
+
+    <!--스크롤 시작!-->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/main_full_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="?attr/actionBarSize"
+        app:layout_constraintTop_toBottomOf="@id/divider_main_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/pager_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="40dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/gray_ellipse"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@id/pager_main"
+                    app:layout_constraintTop_toTopOf="@+id/pager_main">
+
+                    <TextView
+                        android:id="@+id/tv_text_current"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:text="/"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tv_text_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:text="3"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/scroll_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pager_main">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/category_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal"
+                        android:paddingRight="18dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/category_item" />
+                </HorizontalScrollView>
+
+                <View
+                    android:id="@+id/divider_main_middle"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_f2f2f2"
+                    app:layout_constraintTop_toBottomOf="@id/scroll_category" />
+
+                <!--이츠에만 있는 맛집-->
+                <TextView
+                    android:id="@+id/tv_main_it"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="22dp"
+                    android:text="@string/main_it"
+                    android:textColor="@color/bottom_main_b"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider_main_middle" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="12dp"
+                    android:layout_marginEnd="18dp"
+                    android:src="@drawable/more"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_main_it"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_main_it" />
+
+                <HorizontalScrollView
+                    android:id="@+id/scroll_it"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    app:layout_constraintTop_toBottomOf="@id/tv_main_it">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/it_recycler"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="12dp"
+                        android:orientation="horizontal"
+                        android:paddingRight="18dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/small_store_item" />
+
+                </HorizontalScrollView>
+
+                <View
+                    android:id="@+id/divider_it"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/main_bold_divider"
+                    app:layout_constraintTop_toBottomOf="@+id/scroll_it" />
+
+                <!--인기 프렌차이즈-->
+                <TextView
+                    android:id="@+id/tv_main_hot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="22dp"
+                    android:text="@string/main_hot"
+                    android:textColor="@color/bottom_main_b"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider_it" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="12dp"
+                    android:layout_marginEnd="18dp"
+                    android:src="@drawable/more"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_main_hot"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_main_hot" />
+
+                <HorizontalScrollView
+                    android:id="@+id/scroll_hot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    app:layout_constraintTop_toBottomOf="@id/tv_main_hot">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/hot_recycler"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="12dp"
+                        android:orientation="horizontal"
+                        android:paddingRight="18dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/small_store_item" />
+
+                </HorizontalScrollView>
+
+                <View
+                    android:id="@+id/divider_hot"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/main_bold_divider"
+                    app:layout_constraintTop_toBottomOf="@+id/scroll_hot" />
+
+                <!--yellow banner-->
+                <ImageView
+                    android:id="@+id/iv_main_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/main_banner_yellow"
+                    app:layout_constraintTop_toBottomOf="@id/divider_hot" />
+
+                <View
+                    android:id="@+id/divider_yellow"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/main_bold_divider"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_main_banner" />
+
+                <!--새로 들어왔어요-->
+                <TextView
+                    android:id="@+id/tv_main_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="22dp"
+                    android:text="@string/main_new"
+                    android:textColor="@color/bottom_main_b"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider_yellow" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="12dp"
+                    android:layout_marginEnd="18dp"
+                    android:src="@drawable/more"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_main_new"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_main_new" />
+
+                <HorizontalScrollView
+                    android:id="@+id/scroll_new"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    app:layout_constraintTop_toBottomOf="@id/tv_main_new">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/new_recycler"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="12dp"
+                        android:orientation="horizontal"
+                        android:paddingRight="18dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/small_store_item" />
+
+                </HorizontalScrollView>
+
+                <View
+                    android:id="@+id/divider_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginBottom="100dp"
+                    android:background="@color/main_bold_divider"
+                    app:layout_constraintTop_toBottomOf="@+id/scroll_hot" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

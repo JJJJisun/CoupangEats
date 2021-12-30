@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="60dp"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".StoreActivity"
+    tools:showIn="@layout/activity_store">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_store_time"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="14dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/clock"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--배송시간-->
+        <TextView
+            android:id="@+id/tv_de_min_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="22"
+            android:textColor="@color/bottom_main_b"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_store_time"
+            app:layout_constraintStart_toEndOf="@+id/iv_store_time"
+            app:layout_constraintTop_toTopOf="@+id/iv_store_time" />
+
+        <TextView
+            android:id="@+id/tv_de_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="~"
+            android:textColor="@color/bottom_main_b"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_store_time"
+            app:layout_constraintStart_toEndOf="@+id/tv_de_min_text"
+            app:layout_constraintTop_toTopOf="@+id/iv_store_time" />
+
+        <TextView
+            android:id="@+id/tv_de_max_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="32"
+            android:textColor="@color/bottom_main_b"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_store_time"
+            app:layout_constraintStart_toEndOf="@+id/tv_de_text"
+            app:layout_constraintTop_toTopOf="@+id/iv_store_time" />
+
+        <TextView
+            android:id="@+id/tv_de_minute_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="분"
+            android:textColor="@color/bottom_main_b"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_store_time"
+            app:layout_constraintStart_toEndOf="@+id/tv_de_max_text"
+            app:layout_constraintTop_toTopOf="@+id/iv_store_time" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:text="매장·원산지 정보"
+            android:textColor="@color/bottom_main_b"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_store_time"
+            app:layout_constraintEnd_toStartOf="@+id/iv_store_right_arrow"
+            app:layout_constraintTop_toTopOf="@+id/iv_store_time" />
+
+        <ImageView
+            android:id="@+id/iv_store_right_arrow"
+            android:layout_width="6dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="22dp"
+            android:src="@drawable/arrow_right"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_info" />
+
+        <!--배달비-->
+        <TextView
+            android:id="@+id/tv_store_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="배달비"
+            android:textColor="@color/bottom_main_b"
+            app:layout_constraintStart_toStartOf="@+id/iv_store_time"
+            app:layout_constraintTop_toBottomOf="@+id/iv_store_time" />
+
+        <TextView
+            android:id="@+id/tv_store_price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:text="5,500원"
+            android:textColor="@color/bottom_main_b"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_store_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_store_price" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="자세히"
+            android:textColor="@color/bottom_text_w"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_store_price_text"
+            app:layout_constraintStart_toEndOf="@+id/tv_store_price_text"
+            app:layout_constraintTop_toTopOf="@+id/tv_store_price_text" />
+
+        <!--최소주문-->
+        <TextView
+            android:id="@+id/tv_minimum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="최소주문"
+            android:textColor="@color/bottom_main_b"
+            app:layout_constraintStart_toStartOf="@+id/tv_store_price"
+            app:layout_constraintTop_toBottomOf="@+id/tv_store_price" />
+
+        <TextView
+            android:id="@+id/tv_minimum_Amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:text="12,000"
+            android:textColor="@color/bottom_main_b"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_minimum"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_minimum" />
+
+        <TextView
+            android:id="@+id/tv_minimum_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="원"
+            android:textColor="@color/bottom_main_b"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_minimum"
+            app:layout_constraintStart_toEndOf="@+id/tv_minimum_Amount"
+            app:layout_constraintTop_toTopOf="@+id/tv_minimum" />
+
+        <TextView
+            android:id="@+id/tv_menu_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="20dp"
+            android:text="추천메뉴"
+            android:textColor="@color/bottom_main_b"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_minimum_num" />
+
+        <TextView
+            android:id="@+id/tv_menu_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="20dp"
+            android:text="세트메뉴"
+            android:textColor="@color/bottom_main_b"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/tv_menu_1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_minimum_num" />
+
+        <TextView
+            android:id="@+id/tv_menu_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="20dp"
+            android:text="볶음메뉴"
+            android:textColor="@color/bottom_main_b"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/tv_menu_2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_minimum_num" />
+
+        <TextView
+            android:id="@+id/tv_menu_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="20dp"
+            android:text="추가메뉴"
+            android:textColor="@color/bottom_main_b"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/tv_menu_3"
+            app:layout_constraintTop_toBottomOf="@+id/tv_minimum_num" />
+
+        <TextView
+            android:id="@+id/tv_menu_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="20dp"
+            android:text="음료"
+            android:textColor="@color/bottom_main_b"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/tv_menu_4"
+            app:layout_constraintTop_toBottomOf="@+id/tv_minimum_num" />
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="3.8dp"
+            android:background="@color/bottom_main_b"
+            app:layout_constraintBottom_toBottomOf="@+id/divider_menu"
+            app:layout_constraintEnd_toEndOf="@+id/tv_menu_1"
+            app:layout_constraintStart_toStartOf="@+id/tv_menu_1" />
+
+        <View
+            android:id="@+id/divider_menu"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginTop="14dp"
+            android:background="@color/divider_ddd"
+            app:layout_constraintTop_toBottomOf="@+id/tv_menu_1" />
+
+        <!--추천메뉴-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="46dp"
+            android:layout_marginStart="22dp"
+            app:layout_constraintStart_toStartOf="@+id/tv_menu_1"
+            app:layout_constraintTop_toBottomOf="@+id/divider_menu">
+
+            <TextView
+                android:id="@+id/tv_best"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="추천메뉴"
+                android:textColor="@color/bottom_main_b"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_best"
+                android:layout_width="120dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="12dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/best"
+                app:layout_constraintStart_toStartOf="@+id/tv_best"
+                app:layout_constraintTop_toBottomOf="@+id/tv_best" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="22dp"
+                android:src="@drawable/menu_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_best" />
+
+            <TextView
+                android:id="@+id/menu_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="직화낙지볶음"
+                android:textColor="@color/bottom_main_b"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/iv_best"
+                app:layout_constraintTop_toBottomOf="@+id/iv_best" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="24,000원"
+                android:textColor="@color/bottom_main_b"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/menu_text"
+                app:layout_constraintTop_toBottomOf="@+id/menu_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/menu_store"
+                android:textColor="@color/bottom_text_w"
+                app:layout_constraintStart_toStartOf="@+id/menu_text"
+                app:layout_constraintTop_toBottomOf="@+id/menu_text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_store_time"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:layout_marginStart="22dp"-->
+        <!--            android:layout_marginEnd="22dp"-->
+        <!--            android:text="@string/large_text"-->
+        <!--            android:textStyle="bold"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/tv_minimum_num" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

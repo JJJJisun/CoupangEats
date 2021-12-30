@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_bottom_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/bottom_start"
+        android:textColor="@color/bottom_main_b"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_bottom_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/bottom_top"
+        android:textColor="@color/bottom_main_b"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_bottom_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bottom_start" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bottom_bottom_bold"
+        android:textColor="@color/bottom_main_b"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_bottom_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bottom_top" />
+
+    <TextView
+        android:id="@+id/tv_bottom_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/bottom_bottom"
+        android:textColor="@color/bottom_main_b"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/btn_bottom_social_login"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/button_box"
+        android:backgroundTint="@color/main_color"
+        android:text="@string/bottom_social_login"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bottom_bottom" />
+
+    <Button
+        android:id="@+id/btn_bottom_email_login"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/button_box"
+        android:text="@string/bottom_email_login"
+        android:textColor="@color/text_474E58"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_bottom_social_login" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_bottom_email_login">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아직 회원이 아니신가요?"
+            android:textColor="@color/bottom_text_w" />
+
+        <TextView
+            android:id="@+id/tv_bottom_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="16dp"
+            android:text="회원가입"
+            android:textColor="@color/main_color" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

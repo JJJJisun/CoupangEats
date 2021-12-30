@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/item_home"
+        android:icon="@drawable/item_home"
+        app:showAsAction="never"
+        android:title="홈" />
+
+    <item
+        android:id="@+id/item_search"
+        app:showAsAction="collapseActionView"
+        android:icon="@drawable/item_search"
+        android:title="검색" />
+
+    <item
+        android:id="@+id/item_favorite"
+        app:showAsAction="withText"
+        android:icon="@drawable/item_favorite"
+        android:title="즐겨찾기" />
+
+    <item
+        android:id="@+id/item_list"
+        android:icon="@drawable/item_list"
+        android:title="주문내역" />
+
+    <item
+        android:id="@+id/item_my"
+        android:icon="@drawable/item_my"
+        android:title="My 이츠" />
+
+</menu>

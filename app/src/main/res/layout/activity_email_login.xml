@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".src.login.EmailLogin.EmailLoginActivity">
+
+    <ImageButton
+        android:id="@+id/ib_email_cancel"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/canceel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_email_logo"
+        android:layout_width="135dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_email_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/edit_text_corner_rectangle"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="86dp"
+        android:textCursorDrawable="@drawable/edit_text_cursor_color"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/iv_email_logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:text="@string/enter_email"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/et_email_login"
+        app:layout_constraintStart_toStartOf="@+id/et_email_login"
+        app:layout_constraintTop_toTopOf="@+id/et_email_login" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_email_pw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@+id/et_email_login"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:ellipsize="end"
+            android:id="@+id/et_email_pw"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/edit_text_corner_rectangle"
+            android:hint="@string/hint_pw"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="86dp"
+            android:textCursorDrawable="@drawable/edit_text_cursor_color"
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_pw"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_email_pw"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/et_email_login"
+        app:layout_constraintVertical_bias="0.62" />
+
+    <Button
+        android:id="@+id/btn_email_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/button_box"
+        android:backgroundTint="@color/main_color"
+        android:text="로그인"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/layout_email_pw" />
+
+    <TextView
+        android:id="@+id/tv_id_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:text="@string/find_id"
+        android:textColor="@color/text_474E58"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_pw_find"
+        app:layout_constraintEnd_toStartOf="@+id/div_left"
+        app:layout_constraintTop_toTopOf="@+id/tv_pw_find" />
+
+    <View
+        android:id="@+id/div_left"
+        android:layout_width="1dp"
+        android:layout_height="12dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/divider_ddd"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_pw_find"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pw_find"
+        app:layout_constraintTop_toTopOf="@+id/tv_pw_find" />
+
+    <TextView
+        android:id="@+id/tv_pw_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/find_pw"
+        android:textColor="@color/text_474E58"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_email_login" />
+
+    <View
+        android:id="@+id/div_right"
+        android:layout_width="1dp"
+        android:layout_height="12dp"
+        android:layout_marginLeft="8dp"
+        android:background="@color/divider_ddd"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_pw_find"
+        app:layout_constraintStart_toEndOf="@+id/tv_pw_find"
+        app:layout_constraintTop_toTopOf="@+id/tv_pw_find" />
+
+    <TextView
+        android:id="@+id/tv_join"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="@string/join"
+        android:textColor="@color/main_color"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_pw_find"
+        app:layout_constraintStart_toEndOf="@+id/div_right"
+        app:layout_constraintTop_toTopOf="@+id/tv_pw_find" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
